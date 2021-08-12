@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+    {%block css_files %}
+    <link rel="stylesheet" href="{% static "weekly_challenges/weekly_challenges.css"%}">
+    {%endblock%}
+{%block page_title %}
+All Challenges
+{%endblock%}
+<h1>click here for weekly_challenges</h1>
+{%block content %}
+    
+    <strong>{% include "weekly_challenges/includes/header.html" with arg_det="weekly challenges" %}</strong>
+    <ul>
+        <h1>{% for n in days %}
+            <li><a href="{% url "week-challenge" week=n %}">{{n|title}}</a></li>
+        {% endfor %}</h1>
+    </ul>
+{%endblock%}

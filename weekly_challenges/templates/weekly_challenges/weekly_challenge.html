@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%block page_title %}
+    {{title|title}} ChallengeS 
+{%endblock%}
+{%block content %}
+    {% include "weekly_challenges/includes/header.html"  %}
+
+    <h1><strong>{{title|title}}</strong> Challenges</h1>
+    {% if text is not None%}
+        <h1>{{text}}</h1>
+    {% else %}
+        <strong><p>There is no challenge for this day yet!!</p></strong>
+    {% endif %}
+{%endblock%}
